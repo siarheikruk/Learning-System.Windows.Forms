@@ -1,18 +1,27 @@
-﻿using Microsoft.VisualBasic;
+﻿using System;
+using Microsoft.VisualBasic;
 using System.Windows.Forms;
 
-class InputDialogDemo
+namespace Test2
 {
-    static void Main ()
+    class EnteringInteger
     {
-        string name;
+        static void Main()
+        {
+            string res, txt;
 
-        name = Interaction.InputBox(
-            "What is your name?",
-            "Say Hi!...");
+            int year = 2019, age, born;
 
-        string txt = "It's pleasure, " + name + "!";
+            res = Interaction.InputBox("В каком году Вы родились?", "Год рождения");
 
-        MessageBox.Show(txt, "we are done.");
+            born = int.Parse(res);
+
+            age = year - born;
+
+            txt = "Тогда Вам " + age + " лет";
+
+            MessageBox.Show(txt, "Возраст");
+
+        }
     }
 }
